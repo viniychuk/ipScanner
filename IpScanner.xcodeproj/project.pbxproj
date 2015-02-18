@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663C9C3B1A94ACCF00CBD968 /* app-screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 663C9C3A1A94ACCF00CBD968 /* app-screenshot.png */; };
 		66BE545C1A93B60C00D1B554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545B1A93B60C00D1B554 /* AppDelegate.m */; };
 		66BE545E1A93B60C00D1B554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545D1A93B60C00D1B554 /* main.m */; };
 		66BE54601A93B60C00D1B554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BE545F1A93B60C00D1B554 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		663C9C3A1A94ACCF00CBD968 /* app-screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-screenshot.png"; sourceTree = "<group>"; };
 		66BE54551A93B60C00D1B554 /* IpScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IpScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66BE54591A93B60C00D1B554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66BE545A1A93B60C00D1B554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				66BE547A1A93B69600D1B554 /* SystemConfiguration.framework */,
 				66BE54781A93B63500D1B554 /* CFNetwork.framework */,
+				663C9C3A1A94ACCF00CBD968 /* app-screenshot.png */,
 				66BE54571A93B60C00D1B554 /* IpScanner */,
 				66BE546B1A93B60C00D1B554 /* IpScannerTests */,
 				66BE54561A93B60C00D1B554 /* Products */,
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663C9C3B1A94ACCF00CBD968 /* app-screenshot.png in Resources */,
 				66BE54601A93B60C00D1B554 /* Images.xcassets in Resources */,
 				66BE54631A93B60C00D1B554 /* MainMenu.xib in Resources */,
 			);
