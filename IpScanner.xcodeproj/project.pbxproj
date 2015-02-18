@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66BE545C1A93B60C00D1B554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545B1A93B60C00D1B554 /* AppDelegate.m */; };
+		66BE545E1A93B60C00D1B554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545D1A93B60C00D1B554 /* main.m */; };
+		66BE54601A93B60C00D1B554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BE545F1A93B60C00D1B554 /* Images.xcassets */; };
+		66BE54631A93B60C00D1B554 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66BE54611A93B60C00D1B554 /* MainMenu.xib */; };
+		66BE546F1A93B60C00D1B554 /* IpScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE546E1A93B60C00D1B554 /* IpScannerTests.m */; };
+		66BE54791A93B63500D1B554 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BE54781A93B63500D1B554 /* CFNetwork.framework */; };
+		66BE547B1A93B69600D1B554 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BE547A1A93B69600D1B554 /* SystemConfiguration.framework */; };
+		66BE548A1A93F22F00D1B554 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE54891A93F22F00D1B554 /* SimplePing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		66BE548D1A946F1A00D1B554 /* IPFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE548C1A946F1A00D1B554 /* IPFormatter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66BE54691A93B60C00D1B554 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66BE544D1A93B60C00D1B554 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66BE54541A93B60C00D1B554;
+			remoteInfo = IpScanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		66BE54551A93B60C00D1B554 /* IpScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IpScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BE54591A93B60C00D1B554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66BE545A1A93B60C00D1B554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		66BE545B1A93B60C00D1B554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		66BE545D1A93B60C00D1B554 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66BE545F1A93B60C00D1B554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		66BE54621A93B60C00D1B554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		66BE54681A93B60C00D1B554 /* IpScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IpScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BE546D1A93B60C00D1B554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66BE546E1A93B60C00D1B554 /* IpScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IpScannerTests.m; sourceTree = "<group>"; };
+		66BE54781A93B63500D1B554 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		66BE547A1A93B69600D1B554 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		66BE54881A93F22F00D1B554 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		66BE54891A93F22F00D1B554 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		66BE548B1A946F1A00D1B554 /* IPFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPFormatter.h; sourceTree = "<group>"; };
+		66BE548C1A946F1A00D1B554 /* IPFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPFormatter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66BE54521A93B60C00D1B554 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BE547B1A93B69600D1B554 /* SystemConfiguration.framework in Frameworks */,
+				66BE54791A93B63500D1B554 /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66BE54651A93B60C00D1B554 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66BE544C1A93B60C00D1B554 = {
+			isa = PBXGroup;
+			children = (
+				66BE547A1A93B69600D1B554 /* SystemConfiguration.framework */,
+				66BE54781A93B63500D1B554 /* CFNetwork.framework */,
+				66BE54571A93B60C00D1B554 /* IpScanner */,
+				66BE546B1A93B60C00D1B554 /* IpScannerTests */,
+				66BE54561A93B60C00D1B554 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66BE54561A93B60C00D1B554 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66BE54551A93B60C00D1B554 /* IpScanner.app */,
+				66BE54681A93B60C00D1B554 /* IpScannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66BE54571A93B60C00D1B554 /* IpScanner */ = {
+			isa = PBXGroup;
+			children = (
+				66BE54881A93F22F00D1B554 /* SimplePing.h */,
+				66BE54891A93F22F00D1B554 /* SimplePing.m */,
+				66BE545A1A93B60C00D1B554 /* AppDelegate.h */,
+				66BE545B1A93B60C00D1B554 /* AppDelegate.m */,
+				66BE545F1A93B60C00D1B554 /* Images.xcassets */,
+				66BE54611A93B60C00D1B554 /* MainMenu.xib */,
+				66BE548B1A946F1A00D1B554 /* IPFormatter.h */,
+				66BE548C1A946F1A00D1B554 /* IPFormatter.m */,
+				66BE54581A93B60C00D1B554 /* Supporting Files */,
+			);
+			path = IpScanner;
+			sourceTree = "<group>";
+		};
+		66BE54581A93B60C00D1B554 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66BE54591A93B60C00D1B554 /* Info.plist */,
+				66BE545D1A93B60C00D1B554 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66BE546B1A93B60C00D1B554 /* IpScannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				66BE546E1A93B60C00D1B554 /* IpScannerTests.m */,
+				66BE546C1A93B60C00D1B554 /* Supporting Files */,
+			);
+			path = IpScannerTests;
+			sourceTree = "<group>";
+		};
+		66BE546C1A93B60C00D1B554 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66BE546D1A93B60C00D1B554 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66BE54541A93B60C00D1B554 /* IpScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66BE54721A93B60C00D1B554 /* Build configuration list for PBXNativeTarget "IpScanner" */;
+			buildPhases = (
+				66BE54511A93B60C00D1B554 /* Sources */,
+				66BE54521A93B60C00D1B554 /* Frameworks */,
+				66BE54531A93B60C00D1B554 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IpScanner;
+			productName = IpScanner;
+			productReference = 66BE54551A93B60C00D1B554 /* IpScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66BE54671A93B60C00D1B554 /* IpScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66BE54751A93B60C00D1B554 /* Build configuration list for PBXNativeTarget "IpScannerTests" */;
+			buildPhases = (
+				66BE54641A93B60C00D1B554 /* Sources */,
+				66BE54651A93B60C00D1B554 /* Frameworks */,
+				66BE54661A93B60C00D1B554 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66BE546A1A93B60C00D1B554 /* PBXTargetDependency */,
+			);
+			name = IpScannerTests;
+			productName = IpScannerTests;
+			productReference = 66BE54681A93B60C00D1B554 /* IpScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66BE544D1A93B60C00D1B554 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Alexandr Viniychuk";
+				TargetAttributes = {
+					66BE54541A93B60C00D1B554 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					66BE54671A93B60C00D1B554 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 66BE54541A93B60C00D1B554;
+					};
+				};
+			};
+			buildConfigurationList = 66BE54501A93B60C00D1B554 /* Build configuration list for PBXProject "IpScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66BE544C1A93B60C00D1B554;
+			productRefGroup = 66BE54561A93B60C00D1B554 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66BE54541A93B60C00D1B554 /* IpScanner */,
+				66BE54671A93B60C00D1B554 /* IpScannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66BE54531A93B60C00D1B554 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BE54601A93B60C00D1B554 /* Images.xcassets in Resources */,
+				66BE54631A93B60C00D1B554 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66BE54661A93B60C00D1B554 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66BE54511A93B60C00D1B554 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BE548A1A93F22F00D1B554 /* SimplePing.m in Sources */,
+				66BE548D1A946F1A00D1B554 /* IPFormatter.m in Sources */,
+				66BE545E1A93B60C00D1B554 /* main.m in Sources */,
+				66BE545C1A93B60C00D1B554 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66BE54641A93B60C00D1B554 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BE546F1A93B60C00D1B554 /* IpScannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66BE546A1A93B60C00D1B554 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66BE54541A93B60C00D1B554 /* IpScanner */;
+			targetProxy = 66BE54691A93B60C00D1B554 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		66BE54611A93B60C00D1B554 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66BE54621A93B60C00D1B554 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66BE54701A93B60C00D1B554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		66BE54711A93B60C00D1B554 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		66BE54731A93B60C00D1B554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IpScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66BE54741A93B60C00D1B554 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IpScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		66BE54761A93B60C00D1B554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IpScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IpScanner.app/Contents/MacOS/IpScanner";
+			};
+			name = Debug;
+		};
+		66BE54771A93B60C00D1B554 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IpScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IpScanner.app/Contents/MacOS/IpScanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66BE54501A93B60C00D1B554 /* Build configuration list for PBXProject "IpScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66BE54701A93B60C00D1B554 /* Debug */,
+				66BE54711A93B60C00D1B554 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66BE54721A93B60C00D1B554 /* Build configuration list for PBXNativeTarget "IpScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66BE54731A93B60C00D1B554 /* Debug */,
+				66BE54741A93B60C00D1B554 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66BE54751A93B60C00D1B554 /* Build configuration list for PBXNativeTarget "IpScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66BE54761A93B60C00D1B554 /* Debug */,
+				66BE54771A93B60C00D1B554 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66BE544D1A93B60C00D1B554 /* Project object */;
+}
