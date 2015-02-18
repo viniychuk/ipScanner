@@ -16,6 +16,7 @@
 @property (weak) IBOutlet NSArrayController *availabeHosts;
 - (IBAction)startStopScan:(id)sender;
 @property (weak) IBOutlet NSButton *startStopButton;
+@property (weak) IBOutlet NSTextField *ipAddressLabel;
 
 @property NSMutableArray *pingers;
 

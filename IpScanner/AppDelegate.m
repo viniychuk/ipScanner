@@ -12,6 +12,9 @@
 #import "SimplePing.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
 
 @interface AppDelegate () {
     BOOL _isStarted;
@@ -22,8 +25,12 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [_inputFrom setStringValue:@"10.0.1.1"];
-    [_inputTo setStringValue:@"10.0.1.254"];
+    NSLog(@"%@", [[[NSHost currentHost] addresses] objectAtIndex:0]);
+    NSString *internalIp = [self getInternalIP];
+    NSString *mask = [internalIp substringWithRange:NSMakeRange(0, [internalIp rangeOfString:@"." options:NSBackwardsSearch].location)];
+    [_ipAddressLabel setStringValue:[NSString stringWithFormat:@"You IP: %@ / %@", internalIp, [self getExternalIP]]];
+    [_inputFrom setStringValue:[NSString stringWithFormat:@"%@.1", mask]];
+    [_inputTo setStringValue:[NSString stringWithFormat:@"%@.254", mask]];
     _isStarted = NO;
 }
 
@@ -57,6 +64,77 @@
         [_pingers addObject:ping];
     }
     [_startStopButton setState:NSOffState];    
+}
+
+-(NSString *)getInternalIP
+{
+    NSString *address = @"not detected";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+    {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL)
+        {
+            if(temp_addr->ifa_addr->sa_family == AF_INET)
+            {
+                // Get NSString from C String
+                address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
+
+-(NSString*)getExternalIP
+{
+    NSUInteger  an_Integer;
+    NSArray * ipItemsArray;
+    NSString *externalIP;
+    
+    NSURL *iPURL = [NSURL URLWithString:@"http://www.dyndns.org/cgi-bin/check_ip.cgi"];
+    
+    if (iPURL) {
+        NSError *error = nil;
+        NSString *theIpHtml = [NSString stringWithContentsOfURL:iPURL encoding:NSUTF8StringEncoding error:&error];
+        if (!error) {
+            NSScanner *theScanner;
+            NSString *text = nil;
+            
+            theScanner = [NSScanner scannerWithString:theIpHtml];
+            
+            while ([theScanner isAtEnd] == NO) {
+                
+                // find start of tag
+                [theScanner scanUpToString:@"<" intoString:NULL] ;
+                
+                // find end of tag
+                [theScanner scanUpToString:@">" intoString:&text] ;
+                
+                // replace the found tag with a space
+                //(you can filter multi-spaces out later if you wish)
+                theIpHtml = [theIpHtml stringByReplacingOccurrencesOfString:
+                             [ NSString stringWithFormat:@"%@>", text]
+                                                                 withString:@" "] ;
+                ipItemsArray =[theIpHtml  componentsSeparatedByString:@" "];
+                an_Integer=[ipItemsArray indexOfObject:@"Address:"];
+                externalIP =[ipItemsArray objectAtIndex:  ++an_Integer];
+            }
+        } else {
+            return @"not detected";
+//            NSLog(@"Oops... g %d, %@", [error code], [error localizedDescription]);
+        }
+    }
+    return externalIP;
 }
 
 - (void)simplePing:(SimplePing *)pinger didStartWithAddress:(NSData *)address {
