@@ -28,10 +28,15 @@
     NSLog(@"%@", [[[NSHost currentHost] addresses] objectAtIndex:0]);
     NSString *internalIp = [self getInternalIP];
     NSString *mask = [internalIp substringWithRange:NSMakeRange(0, [internalIp rangeOfString:@"." options:NSBackwardsSearch].location)];
-    [_ipAddressLabel setStringValue:[NSString stringWithFormat:@"You IP: %@ / %@", internalIp, [self getExternalIP]]];
+    [_ipAddressLabel setStringValue:[NSString stringWithFormat:@"You IP: %@ / detecting external IP...", internalIp]];
     [_inputFrom setStringValue:[NSString stringWithFormat:@"%@.1", mask]];
     [_inputTo setStringValue:[NSString stringWithFormat:@"%@.254", mask]];
     _isStarted = NO;
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateExternalIp) userInfo:nil repeats:NO];
+}
+
+- (void)updateExternalIp {
+    [_ipAddressLabel setStringValue:[NSString stringWithFormat:@"You IP: %@ / %@", [self getInternalIP], [self getExternalIP]]];
 }
 
 - (void)startPing {
@@ -56,8 +61,9 @@
     _pingers = [[NSMutableArray alloc] init];
     NSLog(@"Starting app...");
     NSString *host;
+    NSString *mask = [[_inputFrom stringValue] substringToIndex:maskStart.location];
     for(int i=1; i < 255 ; i++) {
-        host = [NSString stringWithFormat:@"10.0.1.%d", i];
+        host = [mask stringByAppendingFormat:@".%d", i];
         SimplePing *ping = [SimplePing simplePingWithHostName:host];
         ping.delegate = self;
         [ping start];
@@ -162,6 +168,8 @@
 - (void)simplePing:(SimplePing *)pinger didReceivePingResponsePacket:(NSData *)packet {
 //    const struct sockaddr_in *sockIn = (const struct sockaddr_in *) [packet bytes];
     [[self availabeHosts] addObject:[pinger hostName]];
+//    NSHost *host = [NSHost hostWithAddress:[pinger hostName]];
+    
     NSLog(@"receieve %@", [pinger hostName]);
 }
 

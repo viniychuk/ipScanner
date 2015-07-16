@@ -719,9 +719,9 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-1n-UFR">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-1n-UFR">
                         <rect key="frame" x="17" y="25" width="443" height="240"/>
-                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="CV8-6h-2wZ">
+                        <clipView key="contentView" misplaced="YES" id="CV8-6h-2wZ">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -783,13 +783,19 @@ DQ
                     </box>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-XM-5HE">
                         <rect key="frame" x="18" y="314" width="444" height="26"/>
-                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" title="Multiline Label" usesSingleLineMode="YES" id="1zv-L1-PSp">
+                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" title="establishing connection..." usesSingleLineMode="YES" id="1zv-L1-PSp">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="e3D-1n-UFR" secondAttribute="trailing" constant="20" id="VN3-Xm-lOV"/>
+                    <constraint firstItem="e3D-1n-UFR" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="95" id="Y6L-Cm-Bbt"/>
+                    <constraint firstAttribute="bottom" secondItem="e3D-1n-UFR" secondAttribute="bottom" constant="25" id="lhS-gS-Ffj"/>
+                    <constraint firstItem="e3D-1n-UFR" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="17" id="yNK-Rz-HJ2"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="338" y="316"/>
         </window>
