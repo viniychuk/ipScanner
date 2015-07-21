@@ -10,6 +10,7 @@
 #import <CFNetwork/CFNetwork.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "SimplePing.h"
+#import "NSHost+ThreadedAdditions.h"
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -34,6 +35,11 @@
     [_inputTo setStringValue:[NSString stringWithFormat:@"%@.254", mask]];
     _isStarted = NO;
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateExternalIp) userInfo:nil repeats:NO];
+//    struct hostent *he;
+//    struct in_addr ipv4addr;
+//    inet_pton(AF_INET, "192.168.0.8", &ipv4addr);
+//    he = gethostbyaddr(&ipv4addr, sizeof ipv4addr, AF_INET);
+//    printf("Host name: %s\n", he->h_name);
 }
 
 - (void)updateExternalIp {
@@ -172,8 +178,8 @@
 //    NSHost *host = [NSHost hostWithAddress:[pinger hostName]];
     
     NSLog(@"receieve %@", [pinger hostName]);
-    
     NSLog(@"receieve %@", [self hostnamesForIPv4Address:[pinger hostName]]);
+    NSLog(@"name: %@",  [NSHost hostWithAddress:[pinger hostName]].names);
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

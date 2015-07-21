@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		663C9C3B1A94ACCF00CBD968 /* app-screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 663C9C3A1A94ACCF00CBD968 /* app-screenshot.png */; };
+		66B00ADF1B5DE1890046A14F /* NSHost+ThreadedAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B00ADE1B5DE1890046A14F /* NSHost+ThreadedAdditions.m */; };
 		66BE545C1A93B60C00D1B554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545B1A93B60C00D1B554 /* AppDelegate.m */; };
 		66BE545E1A93B60C00D1B554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE545D1A93B60C00D1B554 /* main.m */; };
 		66BE54601A93B60C00D1B554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BE545F1A93B60C00D1B554 /* Images.xcassets */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		663C9C3A1A94ACCF00CBD968 /* app-screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-screenshot.png"; sourceTree = "<group>"; };
+		66B00ADD1B5DE1890046A14F /* NSHost+ThreadedAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHost+ThreadedAdditions.h"; sourceTree = "<group>"; };
+		66B00ADE1B5DE1890046A14F /* NSHost+ThreadedAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHost+ThreadedAdditions.m"; sourceTree = "<group>"; };
 		66BE54551A93B60C00D1B554 /* IpScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IpScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66BE54591A93B60C00D1B554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66BE545A1A93B60C00D1B554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 		66BE54571A93B60C00D1B554 /* IpScanner */ = {
 			isa = PBXGroup;
 			children = (
+				66B00ADD1B5DE1890046A14F /* NSHost+ThreadedAdditions.h */,
+				66B00ADE1B5DE1890046A14F /* NSHost+ThreadedAdditions.m */,
 				66BE54881A93F22F00D1B554 /* SimplePing.h */,
 				66BE54891A93F22F00D1B554 /* SimplePing.m */,
 				66BE545A1A93B60C00D1B554 /* AppDelegate.h */,
@@ -235,6 +240,7 @@
 				66BE548A1A93F22F00D1B554 /* SimplePing.m in Sources */,
 				66BE548D1A946F1A00D1B554 /* IPFormatter.m in Sources */,
 				66BE545E1A93B60C00D1B554 /* main.m in Sources */,
+				66B00ADF1B5DE1890046A14F /* NSHost+ThreadedAdditions.m in Sources */,
 				66BE545C1A93B60C00D1B554 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
