@@ -10,6 +10,7 @@
 #import <CFNetwork/CFNetwork.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "SimplePing.h"
+#include <netdb.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <sys/types.h>
@@ -171,6 +172,8 @@
 //    NSHost *host = [NSHost hostWithAddress:[pinger hostName]];
     
     NSLog(@"receieve %@", [pinger hostName]);
+    
+    NSLog(@"receieve %@", [self hostnamesForIPv4Address:[pinger hostName]]);
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -184,4 +187,52 @@
         [self startPing];
     }
 }
+
+
+- (NSArray *)hostnamesForIPv4Address:(NSString *)address
+{
+    struct addrinfo *result = NULL;
+    struct addrinfo hints;
+    
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_flags = AI_NUMERICHOST;
+    hints.ai_family = PF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = 0;
+    
+    int errorStatus = getaddrinfo([address cStringUsingEncoding:NSASCIIStringEncoding], NULL, &hints, &result);
+    if (errorStatus != 0) {
+        return nil;
+    }
+    
+    CFDataRef addressRef = CFDataCreate(NULL, (UInt8 *)result->ai_addr, result->ai_addrlen);
+    if (addressRef == nil) {
+        return nil;
+    }
+    freeaddrinfo(result);
+    
+    CFHostRef hostRef = CFHostCreateWithAddress(kCFAllocatorDefault, addressRef);
+    if (hostRef == nil) {
+        return nil;
+    }
+    CFRelease(addressRef);
+    CFStreamError streamError;
+    
+    BOOL succeeded = CFHostStartInfoResolution(hostRef, kCFHostNames, &streamError);
+    if (!succeeded) {
+//        NSLog(@"error:%@", streamError]);
+        return nil;
+    }
+    
+    NSMutableArray *hostnames = [NSMutableArray array];
+    
+    CFArrayRef hostnamesRef = CFHostGetNames(hostRef, NULL);
+    for (int currentIndex = 0; currentIndex < [(__bridge NSArray *)hostnamesRef count]; currentIndex++) {
+        [hostnames addObject:[(__bridge NSArray *)hostnamesRef objectAtIndex:currentIndex]];
+    }
+    
+    return hostnames;
+}
+
+
 @end
